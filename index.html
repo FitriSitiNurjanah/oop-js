@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Supermarket {
+        barang = [
+            ['sabun', 20],
+            ['shampo', 15],
+            ['snack', 10],
+            ['susu', 12],
+            ['biskuit', 15]
+        ]
+        constructor(namaBarang, jumlahBarang) {
+            this.namaBarang = namaBarang;
+            this.jumlahBarang = jumlahBarang;
+        }
+
+        checkBarang() {
+            let barang = this.barang
+            // console.log(barang[0][1]);
+            for (let i = 0; i < barang.length; i++) {
+                if (barang[i][0] == this.namaBarang) {
+                    if (this.jumlahBarang > this.barang) {
+                        return `barang tidak cukup`
+                    } else {
+                        this.barang[i][1] += this.jumlahBarang * 2;
+                        return `Data ${this.namaBarang} ada, jumlah total barang ${this.barang[i][1]}`
+                    } break;
+                }
+                if (i == this.barang.length - 1) {
+                    return `barang yang anda cari tidak ada`
+                }
+            }
+        }
+    }
+    let test = new Supermarket('sayur', 800);
+    console.log(test.checkBarang())
+
+
+</script>
+
+</html>
